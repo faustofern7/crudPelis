@@ -8,8 +8,9 @@ class Pelicula {
     #duracion;
     #pais;
     #reparto;
+    #director;
 
-    constructor(titulo, descripcion, imagen, genero, anio, duracion, pais, reparto) {
+    constructor(titulo, descripcion, imagen, genero, anio, duracion, pais, reparto, director) {
         this.#id = crypto.randomUUID();
         this.#titulo = titulo;
         this.#descripcion = descripcion;
@@ -19,6 +20,7 @@ class Pelicula {
         this.#duracion = duracion;
         this.#pais = pais;
         this.#reparto = reparto;
+        this.#director = director;
     }
 
     get id() {
@@ -92,4 +94,31 @@ class Pelicula {
     set reparto(reparto) {
         this.#reparto = reparto;
     }
+    get director() {
+        return this.#director;
+    }
+
+    set director(director) {
+        this.#director = director;
+    }
+    
+    toJSON(){
+        return {
+            id: this.id,
+            titulo: this.titulo,
+            descripcion: this.descripcion,
+            imagen : this.imagen,
+            genero: this.genero,
+            anio: this.anio,
+            duracion: this.duracion,
+            pais: this.pais,
+            reparto: this.reparto,
+            director: this.director
+        }
+    }
 }
+
+export default Pelicula
+
+
+ 
