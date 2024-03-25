@@ -121,4 +121,3 @@ class Pelicula {
 export default Pelicula
 
 
- 
